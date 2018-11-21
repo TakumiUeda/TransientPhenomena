@@ -1,6 +1,20 @@
 % !TEX root =../main.tex
+\chapter{過渡現象}
 \section{過渡現象}
+
+\begin{align}
+\begin{split}
+v_{L}= L \frac{di}{dt} \mathrm{[V]}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+v_{C}= \frac{1}{C} \int i dt \mathrm{[V]}
+\end{split}
+\end{align}
 時定数\\
+
 
 \ \\ 
 RL直列回路の過渡現象
@@ -15,3 +29,62 @@ RC直列回路の過渡現象
 i=\frac{E}{R} e^{-\frac{1}{CR}t} \mathrm{[A]} \\
 \end{split}
 \end{align}
+
+\chapter{過渡現象}
+\section{ラプラス変換}
+\subsection{ラプラス変換の定義}
+\begin{Definition}[ラプラス変換]
+\begin{align}
+\begin{split}
+F(s) = \int_{0}^{\infty} f (t) e^{-st} dt
+\end{split}
+\end{align}
+正確には
+\begin{align}
+\begin{split}
+F(s) = \lim_{\alpha \to \infty} \int_{0}^{\alpha} f (t) e^{-st} dt
+\end{split}
+\end{align}
+で定義される。
+\end{Definition}
+
+\subsection{逆ラプラス変換}
+
+\begin{Definition}[ブロムウィッチ積分]
+\begin{align}
+\begin{split}
+F(s) = \lim_{p \to \infty} \frac{1}{2 \pi j} \int_{c-jp}^{c+jp} F (s) e^{st} dt
+\end{split}
+\end{align}
+\end{Definition}
+
+\subsection{ラプラス変換表}
+\begin{table}[htbp]
+\begin{center}
+\caption{ラプラス変換表}
+\begin{tabular}{|c|c|c|}
+\hline 
+ No &  $f(t)$	& $F(s)$ \\ \hline
+1& $1$		& $\dfrac{1}{s}$  \\[1.5ex]
+2& $t	$	& $\dfrac{1}{s^{2}}$  \\[1.5ex]
+3& $t^{n}$		& $\dfrac{n!}{s^{n+1}}$  \\[1.5ex]
+4& $e^{at}$		& $\dfrac{1}{s-a}$  \\[1.5ex]
+5& $\sin{at}$		& $\dfrac{a}{s^{2}+a^{2}}$  \\[1.5ex]
+6& $\cos{at}$		& $\dfrac{s}{s^{2}+a^{2}}$  \\[1.5ex]
+7& $e^{bt}\sin{at}$		& $\dfrac{a}{(s-b)^{2}+a^{2}}$  \\[1.5ex]
+8& $e^{bt}\cos{at}$		& $\dfrac{s-b}{(s-b)^{2}+a^{2}}$  \\[1.5ex]
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\begin{Proof}
+\begin{align}
+\begin{split}
+F(s) &= \lim_{p \to \infty} \int_{0}^{p} u (t) e^{st} dt\\
+&=\lim_{p \to \infty} \int_{0}^{p} e^{-st}dt\\
+&=\left[ \frac{e^{-st}}{-s} \right]^{\infty}_{0}\\
+&=\frac{1}{s}-\lim_{t \to \infty} \frac{e^{-st}}{s}\\
+&=\frac{1}{s}
+\end{split}
+\end{align}
+\end{Proof}
