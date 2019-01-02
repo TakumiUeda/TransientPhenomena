@@ -1,56 +1,25 @@
 % !TEX root =../main.tex
-\chapter{$B2aEO8=>](B}
-\section{$B2aEO8=>](B}
-
-\begin{align}
-\begin{split}
-v_{L}= L \frac{di}{dt} \mathrm{[V]}
-\end{split}
-\end{align}
-
-\begin{align}
-\begin{split}
-v_{C}= \frac{1}{C} \int i dt \mathrm{[V]}
-\end{split}
-\end{align}
-$B;~Dj?t(B\\
-
-
-\ \\ 
-RL$BD>Ns2sO)$N2aEO8=>](B
-\begin{align}
-\begin{split}
-i=\frac{E}{R} (1-e^{-\frac{R}{L}t}) \mathrm{[A]}\\
-\end{split}
-\end{align}
-RC$BD>Ns2sO)$N2aEO8=>](B
-\begin{align}
-\begin{split}
-i=\frac{E}{R} e^{-\frac{1}{CR}t} \mathrm{[A]} \\
-\end{split}
-\end{align}
-
-\chapter{$B2aEO8=>](B}
-\section{$B%i%W%i%9JQ49(B}
-\subsection{$B%i%W%i%9JQ49$NDj5A(B}
-\begin{Definition}[$B%i%W%i%9JQ49(B]
+\chapter{序論}
+\chapter{ラプラス変換}
+\section{ラプラス変換の定義}
+\begin{Definition}[ラプラス変換]
 \begin{align}
 \begin{split}
 F(s) = \int_{0}^{\infty} f (t) e^{-st} dt
 \end{split}
 \end{align}
-$B@53N$K$O(B
+正確には
 \begin{align}
 \begin{split}
 F(s) = \lim_{\alpha \to \infty} \int_{0}^{\alpha} f (t) e^{-st} dt
 \end{split}
 \end{align}
-$B$GDj5A$5$l$k!#(B
+で定義される。
 \end{Definition}
 
-\subsection{$B5U%i%W%i%9JQ49(B}
+\section{逆ラプラス変換}
 
-\begin{Definition}[$B%V%m%`%&%#%C%A@QJ,(B]
+\begin{Definition}[ブロムウィッチ積分]
 \begin{align}
 \begin{split}
 F(s) = \lim_{p \to \infty} \frac{1}{2 \pi j} \int_{c-jp}^{c+jp} F (s) e^{st} dt
@@ -58,10 +27,10 @@ F(s) = \lim_{p \to \infty} \frac{1}{2 \pi j} \int_{c-jp}^{c+jp} F (s) e^{st} dt
 \end{align}
 \end{Definition}
 
-\subsection{$B%i%W%i%9JQ49I=(B}
+\section{ラプラス変換表}
 \begin{table}[htbp]
 \begin{center}
-\caption{$B%i%W%i%9JQ49I=(B}
+\caption{ラプラス変換表}
 \begin{tabular}{|c|c|c|}
 \hline 
  No &  $f(t)$	& $F(s)$ \\ \hline
@@ -89,4 +58,46 @@ F(s) &= \lim_{p \to \infty} \int_{0}^{p} u (t) e^{st} dt\\
 \end{align}
 \end{Proof}
 
-$B%-%k%R%[%C%U$NK!B'(B
+キルヒホッフの法則
+
+\chapter{真空管}
+ブラウン管
+\chapter{過渡現象}
+\section{過渡現象}
+
+\begin{align}
+\begin{split}
+v_{L}= L \drv{i(t)}{t} \mathrm{[V]}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+v_{C}= \frac{1}{C} \int i(t) dt \mathrm{[V]}
+\end{split}
+\end{align}
+時定数\\
+
+
+\ \\ 
+RL直列回路の過渡現象
+\begin{align}
+\begin{split}
+i=\frac{E}{R} (1-e^{-\frac{R}{L}t}) \mathrm{[A]}\\
+\end{split}
+\end{align}
+RC直列回路の過渡現象
+\begin{align}
+\begin{split}
+i=\frac{E}{R} e^{-\frac{1}{CR}t} \mathrm{[A]} \\
+\end{split}
+\end{align}
+
+RLC直列回路の過渡現象
+\begin{align}
+\begin{split}
+v_{t} = Ri(t) + L \drv{i(t)}{t} + \frac{1}{C} \int i dt \mathrm{[V]}
+\end{split}
+\end{align}
+時定数\\
+
